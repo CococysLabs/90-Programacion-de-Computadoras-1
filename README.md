@@ -1,69 +1,80 @@
-# [090] Programación de Computadoras 1
+# 090_Programacion-de-Computadoras-1
+Contenido, ejemplos y recursos del curso de Programación de Computadoras 1.
 
-Contenido, ejemplos y recursos del curso **Programación de Computadoras 1** (090), organizado por ciclo académico.
+## 📌 Guía de Trabajo para Tutores Auxiliares
 
-## 📁 Estructura
+¡Bienvenido/a al equipo de tutores! Para garantizar el correcto orden del material, este repositorio utiliza restricciones por directorio mediante el archivo `CODEOWNERS` y permisos asignados al **Team de Tutores**.
 
-El repositorio está organizado por ciclo. Cada ciclo contiene una carpeta `Contenido/` con el material del curso según la estructura definida por el profesor/catedrático (semanas, proyectos, diseño curricular, opiniones del catedrático, etc.).
+---
 
+### 🚨 Políticas de Permisos y Edición
+
+1. **Pertenencia al Team:** Eres parte del equipo asignado a este repositorio con permisos para subir cambios a la carpeta del ciclo vigente ubicada en la rama `main`.
+2. **Restricción de Rutas:** El archivo `.github/CODEOWNERS` protege los ciclos anteriores y otras carpetas del curso. **Únicamente se te permitirá hacer push o cambios sobre la carpeta correspondiente al ciclo actual.**
+3. **Descarga Selectiva:** Para evitar descargar carpetas pesadas de ciclos pasados, es **obligatorio** utilizar el flujo de *sparse-checkout* detallado a continuación.
+
+---
+
+## 🚀 Flujo de Trabajo Paso a Paso
+
+1. Sigue esta secuencia exacta de comandos en tu terminal para descargar exclusivamente la carpeta de trabajo asignada:
+
+    ```bash
+    # 1. Clonar el repositorio sin descargar archivos completos
+    git clone --no-checkout https://github.com/CococysLabs/90-Programacion-de-Computadoras-1_Ejemplos.git
+
+    cd 90-Programacion-de-Computadoras-1_Ejemplos
+
+    # 2. Habilitar sparse-checkout en modo cono
+    git sparse-checkout init --cone
+
+    # 3. Indicar únicamente la carpeta que necesita trabajar el tutor
+    git sparse-checkout set Ciclo-2026-Segundo-Semestre/Ejemplos
+
+    # 4. Descargar solo esa carpeta en la rama main
+    git checkout main
+    ```
+
+2. Agrega tus códigos de ejemplo, guías o material didáctico dentro de la carpeta descargada:
+
+    `Ciclo-2026-Segundo-Semestre/Ejemplos/`
+
+3. Guarda tus cambios localmente creando un commit explicativo:
+
+    ```bash
+    git add .
+    git commit -m "feat: agregar ejemplo de [DESCRIPCION] para el ciclo 2026-Segundo-Semestre"
+    ```
+
+4. Envía tus cambios directamente a la rama principal:
+
+    ```bash
+    git push origin main
+    ```
+
+    > **Nota:** Si por error intentas modificar o eliminar archivos fuera de la carpeta `Ciclo-2026-Segundo-Semestre/Ejemplos`, la plataforma rechazará el `push` debido a las reglas de propiedad configuradas en `CODEOWNERS`.
+
+---
+
+## 📁 Estructura del Repositorio
+
+```text
+90-Programacion-de-Computadoras-1_Ejemplos/
+├── .github/
+│   └── CODEOWNERS                       <-- Configuración de permisos
+├── Ciclo-2024-Primer-Semestre/          <-- Protegido por CODEOWNERS
+├── Ciclo-2024-Segundo-Semestre/         <-- Protegido por CODEOWNERS
+├── Ciclo-2025-Primer-Semestre/          <-- Protegido por CODEOWNERS
+├── Ciclo-2025-Segundo-Semestre/         <-- Protegido por CODEOWNERS
+├── Ciclo-2026-Primer-Semestre/          <-- Protegido por CODEOWNERS
+└── Ciclo-2026-Segundo-Semestre/         <-- Ciclo actual
+    └── Ejemplos/                        <-- 🎯 Tu carpeta de trabajo asignada
+        └── .gitkeep
 ```
-Ciclo-<Año>-<Semestre>/
-└── Contenido/
-    ├── Semana_1/
-    ├── Semana_2/
-    ├── ...
-    ├── Proyecto 1/
-    ├── Proyecto 2/
-    ├── Diseño_Curricular/
-    ├── Opinion_Catedratico/
-    └── README.md
-```
-
-Ciclos disponibles actualmente:
-
-- `Ciclo-2024-Primer-Semestre`
-- `Ciclo-2024-Segundo-Semestre`
-- `Ciclo-2025-Primer-Semestre`
-- `Ciclo-2025-Segundo-Semestre`
-- `Ciclo-2026-Primer-Semestre`
-- `Ciclo-2026-Segundo-Semestre`
-
-## 📥 Clonar
-
-Puedes clonar el repositorio completo o descargar únicamente el ciclo que necesites.
-
-### Clonar todo el repositorio
-
-```bash
-git clone https://github.com/CococysLabs/90-Programacion-de-Computadoras-1_Ejemplos.git
-```
-
-### Descargar solo un ciclo específico
-
-Si no necesitas todo el historial de ciclos, puedes usar sparse-checkout para traer solo la carpeta que te interesa:
-
-```bash
-git clone --filter=blob:none --sparse https://github.com/CococysLabs/90-Programacion-de-Computadoras-1_Ejemplos.git nombre-carpeta
-cd nombre-carpeta
-git sparse-checkout set Ciclo-2025-Primer-Semestre
-```
-
-Donde:
-
-- `nombre-carpeta` es el nombre que tendrá la carpeta descargada en tu computadora.
-- `Ciclo-2025-Primer-Semestre` es el ciclo específico que deseas descargar (usa el nombre exacto de la carpeta).
-
-## 🤝 Contribuir
-
-Si deseas contribuir con material para este curso:
-
-1. Haz fork del repositorio
-2. Crea una rama: `git checkout -b feature/agregar-contenido`
-3. Agrega tu contenido en el ciclo correspondiente (o crea uno nuevo siguiendo la estructura existente)
-4. Commit: `git commit -m "feat: agregar [descripción]"`
-5. Push y crea un Pull Request
 
 ## 📧 Contacto
 
-- Email: cococys@ingenieria.usac.edu.gt
+- Email: computacion.cococys@gmail.com
 - Organización: [CococysLabs](https://github.com/CococysLabs)
+
+---
