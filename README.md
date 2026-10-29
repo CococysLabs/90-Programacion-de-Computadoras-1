@@ -74,7 +74,7 @@ Contenido, ejemplos y recursos del curso de Programación de Computadoras 1.
 
 ## 📧 Contacto
 
-- Email: computacion.cococys@gmail.com
+- Email: software.cococys@gmail.com
 - Organización: [CococysLabs](https://github.com/CococysLabs)
 
 ---
